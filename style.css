@@ -30,7 +30,7 @@ body{
     display: inline-block;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
-    padding: 15px;
+    padding: 5px;
     font-size: 13px;
     cursor: url(img/curs.png), default;
 }
