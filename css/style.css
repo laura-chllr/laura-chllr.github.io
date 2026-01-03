@@ -1,0 +1,554 @@
+body {
+    margin: 0;
+    font-family: "Hanken Grotesk", sans-serif;
+    background: white;
+}
+
+
+/* ––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––– /*
+/* –– GRILLE PROJETS HOME PAGE –– */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-left: 60px;
+    margin-top: 0;
+    margin-bottom: 0; 
+    gap: 0;
+    padding: 0;
+}
+
+.projects > br {
+    display: none;
+}
+.project {
+    grid-column: span 4;
+}
+
+#foulesentimentale { 
+    grid-column: 1 / span 8;
+    grid-row: 1;
+}
+
+#sommeil { 
+    grid-column: 9 / span 4;
+    grid-row: 2;
+}
+
+#jeu { 
+    grid-column: 4 / span 5;
+    grid-row: 3;
+}
+
+#tdc { 
+    grid-column: 1 / span 3;
+    grid-row: 4;
+}
+
+#diplome { 
+    grid-column: 4 / span 9;
+    grid-row: 5;
+}
+
+#webwaw { 
+    grid-column: 1 / span 3;
+    grid-row: 6;
+}
+
+#citations { 
+    grid-column: 4 / span 5;
+    grid-row: 7;
+}
+
+#bombe { 
+    grid-column: 9 / span 4;
+    grid-row: 8;
+}
+
+#tracts { 
+    grid-column: 1 / span 8 ;
+    grid-row: 9;
+}
+
+#tracts-expes { 
+    grid-column: 9 / span 4;
+    grid-row: 10;
+}
+
+#recherches-typo { 
+    grid-column: 4 / span 5;
+    grid-row: 11;
+}
+
+#nexus { 
+    grid-column: 1 / span 4;
+    grid-row: 12;
+}
+
+#nexus { 
+    grid-column: 9 / span 4;
+    grid-row: 13;
+}
+
+#poemes { 
+    grid-column: 1 / span 8;
+    grid-row: 14;
+}
+
+#ocoin { 
+    grid-column: 9 / span 4;
+    grid-row: 15;
+}
+
+
+@media (max-width:800px) {
+    .project {
+        grid-column: 1 / span 1 !important;
+        grid-row: auto !important;
+    }
+}
+.project img {
+    display: block;
+    object-fit: cover;   
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    grid-column: span 8;
+}
+
+/* –– EFFET N&B → COULEUR –– */
+.img-fx{
+    transition: 0.2s;
+    filter: grayscale(1);
+}
+
+.img-fx:hover{
+    opacity:1;
+    filter: none;
+}
+
+
+/* ––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––– /*
+/* –– NAVIGATION FIXE À GAUCHE –– */
+.header .sticky {
+    position: fixed;
+    margin-left: 20px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; 
+ 
+}
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.rotated {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.header a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+
+
+/* ––––––––––––––––––––––––––––––––––––––––––– */
+/* –– PANNEAUX CONTACT, SOMMAIRE, À PROPOS –– */
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(33vw + 60px);
+    min-width: 415px;
+    max-width: 600px; 
+    height: 100vh;
+    background: black;
+    color: white;
+    transform: translateX(-100%);
+    transition: opacity 0s ease; 
+    z-index: 200;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    opacity: 0;
+}
+
+.panel:target,
+.panel.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* –– NAVIGATION DANS LES PANNEAUX –– */
+.panel-sticky {
+    position: fixed;
+    left: 20px;
+    top: -20px;           
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; 
+    opacity: 0;
+    transition: opacity 0.65s;
+}
+
+.panel:target .panel-sticky,
+.panel.visible .panel-sticky {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.panel-sticky .rotated,
+.panel-sticky .logo {
+    color: white;
+}
+
+/* –– TEXTE DANS LES PANNEAUX –– */
+.panel-content {
+    margin-top: -18px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-right: 22px;
+    font-size: 13.5px;
+    text-align: left;
+}
+
+.panel-content .underline-title {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+    line-height: 2; 
+    display: inline-block;
+}
+
+.panel-content .bold {
+    font-weight: 800; 
+    letter-spacing: 1px;
+}
+
+.panel-content .legende {
+    font-size: 8.5px; 
+}
+
+.download-link {
+    color: white;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1.5px;
+}
+
+/* –– LIEN CONTACT –– */
+.panel-infos {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5; 
+    color: white;
+    text-decoration: none;
+}   
+
+/* –– EFFET AU SURVOL CONTACT –– */
+.panel-infos {
+    text-decoration: none;
+}
+
+.panel-infos:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+
+/* –– TEXTE DANS LE SOMMAIRE –– */
+.panel-content-sommaire {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-left: -1px;
+    font-size: 13.5px;
+}
+
+.col-left {
+    text-align: right;
+}
+
+.col-right {
+    text-align: left;
+}
+
+.panel-content-sommaire p,
+.panel-content-sommaire a {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5; 
+    color: white;
+}
+
+/* –– EFFET AU SURVOL –– */
+.panel-content-sommaire a {
+    text-decoration: none;
+}
+
+.panel-content-sommaire a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+/*  –– CROIX POUR FERMER LE PANNEAU  –– */
+.close-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: opacity 0.2s;
+}
+
+.close-panel:hover {
+    opacity: 0.6;
+}
+
+/* –– SOULIGNER LE TEXTE QUAND LE PANNEAU EST OUVERT –– */
+#contact:target .panel-sticky a[href="#contact"],
+#contact:target ~ .header a[href="#contact"],
+#sommaire:target .panel-sticky a[href="#sommaire"],
+#sommaire:target ~ .header a[href="#sommaire"],
+#apropos:target .panel-sticky a[href="#apropos"],
+#apropos:target ~ .header a[href="#apropos"],
+
+#contact.visible .panel-sticky a[href="#contact"],
+#contact.visible ~ .header a[href="#contact"],
+#sommaire.visible .panel-sticky a[href="#sommaire"],
+#sommaire.visible ~ .header a[href="#sommaire"],
+#apropos.visible .panel-sticky a[href="#apropos"],
+#apropos.visible ~ .header a[href="#apropos"] {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+
+/* ––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––– */
+/* –– PAGE D’UN PROJET –– */
+.page-projects {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 60px;
+    margin-top: 0px;
+    gap: 10px;
+}
+
+.page-project img {
+    display: block;
+    object-fit: cover;   
+    width: 100%;
+    gap: 10px;
+}
+
+/* –– NAVIGATION FIXE –– */
+.header .sticky-projects {
+    position: fixed;
+    margin-left: 20px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    gap: 198px;
+}
+
+.scroll {
+    writing-mode: horizontal-tb;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* ––––––––––––––––––––––––––––––––– */
+/* –– PANNEAU INFO –– */
+/* –– SOULIGNER LE TEXTE QUAND LE PANNEAU EST OUVERT –– */
+#infos:target .panel-sticky-projects a[href="#infos"],
+#infos.visible .panel-sticky-projects a[href="#infos"],
+#infos:target ~ .header a[href="#infos"]
+#infos.visible ~ .header a[href="#infos"] {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+}
+
+/* –– NAVIGATION DANS LE PANNEAU INFOS –– */
+.panel-sticky-projects{
+    position: fixed;
+    left: 20px;
+    top: -20px;           
+    display: flex;
+    flex-direction: column;
+    gap: 198px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.65s ease;
+}
+
+.panel:target .panel-sticky-projects,
+.panel.visible .panel-sticky-projects {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.panel-sticky-projects .rotated,
+.panel-sticky-projects .logo,
+.panel-sticky-projects .scroll {
+    color: white;
+}
+
+
+/* ––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––– /*
+/* –– VERSION MOBILE –– */
+
+
+@media (max-width: 768px) {
+
+    /* –– GRILLE HOME PAGE –– */ 
+    .projects { 
+        display: grid; 
+        grid-template-columns: repeat(1, 1fr); 
+        margin-left: 60px; 
+        margin-top: 0px; 
+        gap: 10px; 
+    } 
+    
+    .project img { 
+        display: block; 
+        object-fit: cover; 
+        width: 100%; gap: 10px; 
+    } 
+    
+    .projects br { 
+        display: none; 
+    } 
+    
+    /* –– SUPPRIMER EFFET N&B –– */ 
+    .img-fx { 
+        filter: none; 
+        transition: none;
+    } 
+    
+    .img-fx:hover { 
+        filter: none; 
+        opacity: 1; 
+    } 
+    
+    /* –– NAVIGATION FIXE À GAUCHE –– */ 
+    .header .sticky { 
+        position: fixed; 
+        margin-left: 20px; 
+        margin-top: -15px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        height: 100vh; 
+        gap: 10px; 
+    
+    } .logo { 
+        font-size: 22px; 
+    } 
+    
+    .rotated { 
+        writing-mode: vertical-rl; 
+        transform: rotate(180deg); 
+        font-size: 14px; 
+        letter-spacing: 1px; 
+    }
+
+    /* –– NAVIGATION FIXE PAGE PROJETS –– */
+    .header .sticky-projects {
+        position: fixed; 
+        margin-left: 20px; 
+        margin-top: -15px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        height: 100vh; 
+        gap: 10px; 
+    }
+
+    /* –– PANNEAUX –– */
+    .panel {
+        width: 100vw;   /* Prend toute la largeur de l'écran */
+        max-width: 100%; /* Assure qu'il n'y ait pas de débordement */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* –– BLOC DANS LES PANNEAUX –– */
+    .panel {
+        width: block;
+        min-width: 0;
+        max-width: block;
+        padding: 30px;
+        height: 100vh;
+    }
+
+    .panel-sticky-projects {
+        position: fixed; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        height: 100vh; 
+        gap: 20px; 
+    }
+
+    /* ---- TEXTE PANNEAUX ---- */
+    .panel-content,
+    .panel-content-sommaire {
+        font-size: 12px;
+        margin-left: 30px;
+    }
+
+    .panel-content-sommaire {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-left: -30px;
+    }
+
+   /* –– PANNEAU À PROPOS –– */
+    #apropos .panel-content {
+        max-height: none;
+        height: auto;
+        overflow-y: scroll;
+    }
+
+    /* –– CROIX POUR FERMER PANNEAU –– */
+    .close-panel {
+        top: 20px;    /* Assure que la croix est à 20px du haut de l'écran */
+        right: 20px;  /* Assure que la croix est à 20px du côté droit */
+    }
+
+}
+
