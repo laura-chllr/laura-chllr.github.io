@@ -472,7 +472,7 @@ body {
         display: flex; 
         flex-direction: column; 
         height: auto; 
-        gap: 95px; 
+        gap: 99px; 
     
     } .logo { 
         font-size: 22px; 
@@ -493,7 +493,7 @@ body {
         display: flex; 
         flex-direction: column;
         height: auto;  
-        gap: 95px; 
+        gap: 99px; 
     }
 
     /* –– PANNEAUX –– */
@@ -518,7 +518,7 @@ body {
         display: flex; 
         height: auto;  
         flex-direction: column; 
-        gap: 95px; 
+        gap: 99px; 
     }
 
     .header .sticky,
